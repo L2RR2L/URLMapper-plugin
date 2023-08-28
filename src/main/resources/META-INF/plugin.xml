@@ -1,0 +1,45 @@
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.example.project-plugin</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Url Mapper</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">YourCompany</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+        Maps Urls to their respective controller classes
+    ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+
+
+
+
+    <!-- Define the application component that initializes and starts WebSocketServer -->
+    <application-components>
+        <component>
+            <!-- Specify the fully qualified class name of your WebSocketServerPlugin -->
+            <implementation-class>WebSocketServerPlugin</implementation-class>
+        </component>
+    </application-components>
+
+
+    <actions>
+        <action id="GetWorkingProjectAction" class="WebSocketServerPlugin" text="GetWorkingProject"
+                description="Gets the working project for the URL mapping plugin">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt A"/>
+        </action>
+    </actions>
+
+
+
+</idea-plugin>
